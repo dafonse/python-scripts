@@ -1,7 +1,7 @@
 import requests
 import json
 
-api_key = "e7e77062"
+api_key = "APIKEY"
 lista = []
 
 
@@ -14,21 +14,18 @@ def busca(buscar):
         req = requests.get(
             'http://www.omdbapi.com/?apikey={key}&s={search}&type=movie&page={page}'.format(key=api_key, search=buscar, page=page))
         dicionario = json.loads(req.text)
+
         if dicionario['Response'] == 'False':
             print('Nenhum resultado encontrado!') if page == 1 else None
             break
         elif page == 1:
             print('Foram encontrados {} resustados.'.format(
                 dicionario['totalResults']))
-        i = 0
-        while True:
-            try:
-                lista.append('{}) {}'.format(
-                    seq, dicionario['Search'][i]['Title']))
-                i += 1
-                seq += 1
-            except:
-                break
+
+        for filme in dicionario['Search']:
+            lista.append('{}) {}'.format(seq, filme['Title']))
+            seq += 1
+
         page += 1
 
 
@@ -39,7 +36,7 @@ def imprime():
 
 while True:
     lista.clear()
-    escolha = input('Qual filme que deseja pesquisar? (S para sair): ')
+    escolha = input('Qual filme deseja pesquisar? (S para sair): ')
     if escolha.lower() == 's':
         print('Saindo do script...')
         break
