@@ -5,8 +5,10 @@ api_key = "APIKEY"
 lista = []
 
 
-# é um método, pois não tem retorno e só modifica a lista[]
 def busca(buscar):
+    '''
+    É um método, pois não tem retorno e só modifica a lista[]
+    '''
     page = 1
     seq = 1
     print('Buscando...')
