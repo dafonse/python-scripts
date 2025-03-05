@@ -50,11 +50,11 @@ def busca():
         return dicionario['pageInfo']['totalResults']
 
 
-def imprime(l):
+def imprime(lista):
     """
     Recebe uma lista e imprime seus elementos.
     """
-    for i in l:
+    for i in lista:
         print(i)
 
 
@@ -72,7 +72,7 @@ def abrir_url(url):
 def clica(url):
     driver = webdriver.Firefox()
     driver.get(url)
-    button = driver.find_element_by_xpath("/html/body/div[2]/div[1]/div[1]/div/div[2]/div[3]/div[3]/div[5]/button").click()
+    # button = driver.find_element_by_xpath("/html/body/div[2]/div[1]/div[1]/div/div[2]/div[3]/div[3]/div[5]/button").click()
 
 
 while True:
