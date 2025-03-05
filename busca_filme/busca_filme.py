@@ -1,7 +1,11 @@
-import requests
 import json
+import os
 
-api_key = "APIKEY"
+import requests
+from dotenv import load_dotenv
+
+load_dotenv()  # Load the .env file
+api_key = os.getenv("API_KEY")
 lista = []
 
 
@@ -14,15 +18,15 @@ def busca(buscar):
     print('Buscando...')
     while True:
         req = requests.get(
-            'http://www.omdbapi.com/?apikey={key}&s={search}&type=movie&page={page}'.format(key=api_key, search=buscar, page=page))
+            'http://www.omdbapi.com/?apikey={key}&s={search}&type=movie&page={page}'.format(key=api_key, search=buscar, page=page)
+        )
         dicionario = json.loads(req.text)
 
         if dicionario['Response'] == 'False':
             print('Nenhum resultado encontrado!') if page == 1 else None
             break
         elif page == 1:
-            print('Foram encontrados {} resustados.'.format(
-                dicionario['totalResults']))
+            print('Foram encontrados {} resustados.'.format(dicionario['totalResults']))
 
         for filme in dicionario['Search']:
             lista.append('{}) {}'.format(seq, filme['Title']))
@@ -47,4 +51,7 @@ while True:
     if imprime_esc.lower() == 'y':
         imprime()
 
+print('Encerrado!')
+print('Encerrado!')
+print('Encerrado!')
 print('Encerrado!')
