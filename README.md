@@ -1,6 +1,6 @@
 # Python Scripts and Small Projects
 
-### [buscaFilme](/busca_filme)
+### [Busca Filme](/busca_filme)
 A python script that uses the [OmDb](http://www.omdbapi.com/) API to get movies info. Needs to create an API KEY to use the script.
 
 ### [Jogo da Forca](/jogo_forca)
