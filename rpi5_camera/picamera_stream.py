@@ -1,22 +1,23 @@
-#!/usr/bin/python3
+import cv2
+from picamera2 import Picamera2
 
-import time
-
-from picamera2 import Picamera2, Preview
-
+# Inicializa a câmera
 picam2 = Picamera2()
-picam2.start_preview(Preview.QTGL)
+picam2.configure(picam2.create_preview_configuration())
 
-preview_config = picam2.create_preview_configuration()
-picam2.configure(preview_config)
-
+# Inicia a captura
 picam2.start()
-time.sleep(1)
 
-picam2.set_controls({"AfMode": 0, "LensPosition": 425})
-# If your libcamera-dev version is 0.0.10, use the following code.
-# AfMode Set the AF mode (manual, auto, continuous)
-# For example, single focus: picam2.set_controls({"AfMode": 1 ,"AfTrigger": 0})
-#              continuous focus: picam2.set_controls({"AfMode": 2 ,"AfTrigger": 0})
+while True:
+    frame = picam2.capture_array()
 
-time.sleep(5)
+    # Mostra o frame em uma janela OpenCV
+    cv2.imshow("Camera OV5647 - Raspberry Pi 5", frame)
+
+    # Encerra se a tecla 'q' for pressionada
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+# Finaliza a captura e fecha janelas
+picam2.stop()
+cv2.destroyAllWindows()
