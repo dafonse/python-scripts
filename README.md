@@ -9,6 +9,9 @@ A script that fetches video details from a public YouTube playlist using the You
 ### [OpenCV Image Processing](/cv-image/)
 Very simple OpenCV image manipulation.
 
+### [Decision Tree](/draw-decision-tree/)
+A simple Python script that draws a tree pattern using the turtle graphics library.
+
 ### [Jogo da Forca](/jogo-forca/)
 A simple python script that makes you guess what word is hidden by underscores in a variable and shows the value according you input the rigth letter.
 
