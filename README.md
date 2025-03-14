@@ -17,3 +17,6 @@ A simple python script that makes you guess what word is hidden by underscores i
 
 ### [Raspberry Pi 5 Câmera OV5647](/rpi5-camera/)
 Código de teste da câmera OV56467 em uma Raspberry Pi 5 com Ubuntu 24 e biblioteca OpenCV.
+
+### [Jogo da Cobra](/snake-game/)
+A classic Snake game implementation using the Python curses library that runs in the terminal.
