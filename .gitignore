@@ -1,5 +1,6 @@
 # Ignore Visual Studio Code
 .vscode/
+venv/
 
 # Ignore environment file
 .env
