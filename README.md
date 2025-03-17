@@ -20,3 +20,6 @@ Código de teste da câmera OV56467 em uma Raspberry Pi 5 com Ubuntu 24 e biblio
 
 ### [Jogo da Cobra](/snake-game/)
 A classic Snake game implementation using the Python curses library that runs in the terminal.
+
+### [Display Weather Info](/weather-cities-display/)
+A simple Python GUI application that shows weather information using tkinter for the graphical interface and OpenWeatherMap API for weather data.
